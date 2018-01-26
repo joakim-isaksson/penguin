@@ -1,2 +1,2 @@
 # Penguin
-![penguin](penguin.png)
+![penguin](penguin.jpg)
