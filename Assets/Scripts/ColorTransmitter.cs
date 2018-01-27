@@ -1,11 +1,9 @@
-﻿using System.ComponentModel.Design;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Player))]
 public class ColorTransmitter : MonoBehaviour
 {
     public float MaxDistance;
-    public float LineWidth;
     
     Player player;
     Player target;
@@ -21,10 +19,7 @@ public class ColorTransmitter : MonoBehaviour
 
         collisions = new Collider2D[GameController.Get().MaxNumberOfPlayers];
         candidates = new Player[collisions.Length];
-        line = gameObject.AddComponent<LineRenderer>();
-        line.material = new Material(Shader.Find("Sprites/Diffuse"));
-        line.widthMultiplier = LineWidth;
-        line.positionCount = 2;
+        line = GetComponent<LineRenderer>();
         line.enabled = false;
     }
 
@@ -36,25 +31,29 @@ public class ColorTransmitter : MonoBehaviour
         {
             line.enabled = false;
             player.Transmiting = false;
+            target = null;
             return;
         }
-        
-        // Continue transmiting
-        if (player.Transmiting)
+
+        if (target == null)
         {
-            // Update transmitting effect
+            line.enabled = false;
+            player.Transmiting = false;
+        }
+        else if (player.Transmiting)
+        {
             line.SetPosition(0, player.transform.position);
             line.SetPosition(1, target.transform.position);
             return;
         }
         
         // Find targets for transmission
-        var hits = Physics2D.OverlapCircleNonAlloc(transform.position, MaxDistance, collisions);
+        var hits = Physics2D.OverlapCircleNonAlloc(player.transform.position, MaxDistance, collisions);
         var targetCount = 0;
         for (var i = 0; i < hits; ++i)
         {
             var other = collisions[i].GetComponent<Player>();
-            if (other == null) return;
+            if (other == null || other == player) continue;
             if (!other.Moving) candidates[targetCount++] = other;
         }
         if (targetCount == 0) return;
@@ -72,8 +71,8 @@ public class ColorTransmitter : MonoBehaviour
         
         // Start transmiting
         player.Transmiting = true;
-        line.SetPosition(0, player.transform.position + Vector3.back);
-        line.SetPosition(1, target.transform.position + Vector3.back);
+        line.SetPosition(0, player.transform.position);
+        line.SetPosition(1, target.transform.position);
         line.startColor = Color.blue;
         line.endColor = Color.blue;
         line.enabled = true;

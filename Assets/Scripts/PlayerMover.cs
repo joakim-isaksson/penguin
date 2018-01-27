@@ -26,7 +26,7 @@ public class PlayerMover : MonoBehaviour
 			CnInputManager.GetAxis("Vertical")
 		);
 		
-		if (Math.Abs(input.magnitude) < float.Epsilon)
+		if (Math.Abs(input.magnitude) <= float.Epsilon)
 		{
 			player.Moving = false;
 			return;
