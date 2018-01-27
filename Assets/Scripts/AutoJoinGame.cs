@@ -25,8 +25,6 @@ public class AutoJoinGame : Photon.MonoBehaviour
     public void Update()
     {
         if (!connectInUpdate || !AutoConnect || PhotonNetwork.connected) return;
-        
-        Debug.Log("Update()");
 
         connectInUpdate = false;
         PhotonNetwork.ConnectUsingSettings(Version + "." + SceneManagerHelper.ActiveSceneBuildIndex);
@@ -35,34 +33,24 @@ public class AutoJoinGame : Photon.MonoBehaviour
     // ReSharper disable once UnusedMember.Global
     public void OnConnectedToMaster()
     {
-        Debug.Log("OnConnectedToMaster()");
         PhotonNetwork.JoinRandomRoom();
     }
     
     // ReSharper disable once UnusedMember.Global
     public void OnJoinedLobby()
     {
-        Debug.Log("OnJoinedLobby()");
         PhotonNetwork.JoinRandomRoom();
     }
     
     // ReSharper disable once UnusedMember.Global
     public void OnPhotonRandomJoinFailed()
     {
-        Debug.Log("OnPhotonRandomJoinFailed()");
         PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = MaxNumberOfPlayers }, null);
-    }
-    
-    // ReSharper disable once UnusedMember.Global
-    public void OnFailedToConnectToPhoton(DisconnectCause cause)
-    {
-        Debug.LogError("Cause: " + cause);
     }
     
     // ReSharper disable once UnusedMember.Global
     public void OnJoinedRoom()
     {
-        Debug.Log("OnJoinedRoom()");
         game.JoinGame();
     }
 }
