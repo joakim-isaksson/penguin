@@ -14,7 +14,7 @@ public class Player : Photon.MonoBehaviour, IPunObservable
     {
         IsLocal = photonView.isMine;
         
-        if (IsLocal) color = new Color(Random.value, Random.value, Random.value);
+        color = IsLocal ? new Color(Random.value, Random.value, Random.value) : Color.white;
         
         if (OnPlayerJoined != null) OnPlayerJoined(this);
     }
