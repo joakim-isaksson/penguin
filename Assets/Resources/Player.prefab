@@ -36,10 +36,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4775704411480540}
-  - component: {fileID: 114005926752248738}
-  - component: {fileID: 114881786811359260}
   - component: {fileID: 114502306925200774}
   - component: {fileID: 114546430876483508}
+  - component: {fileID: 58979708873280344}
+  - component: {fileID: 50418341831962144}
+  - component: {fileID: 114005926752248738}
+  - component: {fileID: 114881786811359260}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -115,6 +117,41 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1222880108351156}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!50 &50418341831962144
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1851190176543054}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 10
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &58979708873280344
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1851190176543054}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: d1ac820185372e84bbe1e3120e2f6ee3, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!114 &114005926752248738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,7 +163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 074b98ecbc8137041a6ccf45ee1ba525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 10
+  color: {r: 0, g: 0, b: 0, a: 0}
+  Speed: 2
   IsLocal: 0
 --- !u!114 &114502306925200774
 MonoBehaviour:
@@ -148,6 +186,7 @@ MonoBehaviour:
   onSerializeRigidBodyOption: 2
   ownershipTransfer: 0
   ObservedComponents:
+  - {fileID: 114005926752248738}
   - {fileID: 114546430876483508}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
@@ -230,3 +269,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d026b6b1d872c6489d09aacd6a2ce74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoveForce: 1000

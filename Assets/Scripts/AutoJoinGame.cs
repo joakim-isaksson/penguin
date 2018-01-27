@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class AutoJoinGame : Photon.MonoBehaviour
 {
+    public bool OfflineMode;
     public bool AutoConnect = true;
     public byte Version = 1;
     public byte MaxNumberOfPlayers = 12;
@@ -13,6 +14,7 @@ public class AutoJoinGame : Photon.MonoBehaviour
     void Awake()
     {
         game = GameController.Get();
+        PhotonNetwork.offlineMode = OfflineMode;
     }
 
     public void Start()
