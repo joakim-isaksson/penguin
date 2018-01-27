@@ -14,6 +14,6 @@ public class BodyColorController : MonoBehaviour
 	
 	void Update()
 	{
-		spriteRenderer.color = Player.color;
+		spriteRenderer.color = Player.Color.Value;
 	}
 }

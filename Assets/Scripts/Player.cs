@@ -5,7 +5,7 @@ public class Player : Photon.MonoBehaviour, IPunObservable
     public delegate void PlayerAction(Player player);
     public static PlayerAction OnPlayerJoined;
 
-    public Color color;
+    [HideInInspector] public GameColor Color;
     public float Speed;
     
     [HideInInspector] public bool IsLocal;
@@ -13,8 +13,8 @@ public class Player : Photon.MonoBehaviour, IPunObservable
     void Awake()
     {
         IsLocal = photonView.isMine;
-        
-        color = IsLocal ? new Color(Random.value, Random.value, Random.value) : Color.white;
+
+        Color = ColorManager.Get().GetRandomColor();
         
         if (OnPlayerJoined != null) OnPlayerJoined(this);
     }
@@ -23,15 +23,15 @@ public class Player : Photon.MonoBehaviour, IPunObservable
     {
         if (stream.isWriting)
         {
-            stream.SendNext(color.r);
-            stream.SendNext(color.g);
-            stream.SendNext(color.b);
+            stream.SendNext(Color.Value.r);
+            stream.SendNext(Color.Value.g);
+            stream.SendNext(Color.Value.b);
         }
         else
         {
-            color.r = (float) stream.ReceiveNext();
-            color.g = (float) stream.ReceiveNext();
-            color.b = (float) stream.ReceiveNext();
+            Color.Value.r = (float) stream.ReceiveNext();
+            Color.Value.g = (float) stream.ReceiveNext();
+            Color.Value.b = (float) stream.ReceiveNext();
         }
     }
 }
