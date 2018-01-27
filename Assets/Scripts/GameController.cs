@@ -3,6 +3,7 @@
 public class GameController : MonoBehaviour
 {
 	public GameObject PlayerPrefab;
+	public byte MaxNumberOfPlayers = 12;
 
 	PlayArea playArea;
 

@@ -1,11 +1,8 @@
-using UnityEngine;
-
 public class AutoJoinGame : Photon.MonoBehaviour
 {
     public bool OfflineMode;
     public bool AutoConnect = true;
     public byte Version = 1;
-    public byte MaxNumberOfPlayers = 12;
     
     bool connectInUpdate = true;
 
@@ -45,7 +42,7 @@ public class AutoJoinGame : Photon.MonoBehaviour
     // ReSharper disable once UnusedMember.Global
     public void OnPhotonRandomJoinFailed()
     {
-        PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = MaxNumberOfPlayers }, null);
+        PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = game.MaxNumberOfPlayers }, null);
     }
     
     // ReSharper disable once UnusedMember.Global
