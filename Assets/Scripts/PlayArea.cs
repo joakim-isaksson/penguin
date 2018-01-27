@@ -2,7 +2,7 @@
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(BoxCollider2D))]
-public class SpawnArea : MonoBehaviour
+public class PlayArea : MonoBehaviour
 {
     BoxCollider2D boxCollider;
     
@@ -11,7 +11,7 @@ public class SpawnArea : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
     }
     
-    public Vector3 GetRandomSpawnPoint()
+    public Vector3 NextSpawnPoint()
     {
         var bounds = boxCollider.bounds;
         return bounds.center + new Vector3(
@@ -21,8 +21,8 @@ public class SpawnArea : MonoBehaviour
         );
     }
     
-    public static SpawnArea Get()
+    public static PlayArea Get()
     {
-        return GameObject.FindGameObjectWithTag(typeof(SpawnArea).Name).GetComponent<SpawnArea>();
+        return GameObject.FindGameObjectWithTag(typeof(PlayArea).Name).GetComponent<PlayArea>();
     }
 }

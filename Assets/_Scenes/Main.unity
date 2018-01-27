@@ -154,8 +154,8 @@ GameObject:
   - component: {fileID: 926329758}
   - component: {fileID: 926329757}
   m_Layer: 0
-  m_Name: SpawnArea
-  m_TagString: SpawnArea
+  m_Name: PlayArea
+  m_TagString: PlayArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
