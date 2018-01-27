@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
 			CnInputManager.GetAxis("Vertical")
 		);
 		
+		if (input.magnitude > 1.0f) input.Normalize();
+		
 		rb.AddForce(input * player.Speed * MoveForce * Time.deltaTime);
 	}
 }
