@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using CnControls;
+using UnityEngine;
 
 [RequireComponent(typeof(Player))]
 [RequireComponent(typeof(Rigidbody2D))]
@@ -21,8 +22,8 @@ public class PlayerMovement : MonoBehaviour
 		if (!player.IsLocal) return;
 		
 		var input = new Vector2(
-			Input.GetAxis("Horizontal"),
-			Input.GetAxis("Vertical")
+			CnInputManager.GetAxis("Horizontal"),
+			CnInputManager.GetAxis("Vertical")
 		);
 		
 		rb.AddForce(input * player.Speed * MoveForce * Time.deltaTime);
