@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
 		rb.isKinematic = !player.IsLocal;
 	}
 
-	void Update()
+	void LateUpdate()
 	{
 		if (!player.IsLocal) return;
 		
