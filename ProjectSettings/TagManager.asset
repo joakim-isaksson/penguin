@@ -7,6 +7,8 @@ TagManager:
   - SpawnArea
   - PlayArea
   - ColorManager
+  - ColorCircle
+  - CameraController
   layers:
   - Default
   - TransparentFX

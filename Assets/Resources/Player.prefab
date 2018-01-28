@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4902730144532998}
   - component: {fileID: 212259011444597488}
-  - component: {fileID: 114764898816139686}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -123,9 +122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2
+  Color: {r: 0.89705884, g: 0.2836289, b: 0.2836289, a: 1}
   IsLocal: 0
-  Transmiting: 0
-  Moving: 0
 --- !u!114 &114502306925200774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,7 +144,6 @@ MonoBehaviour:
   onSerializeRigidBodyOption: 2
   ownershipTransfer: 0
   ObservedComponents:
-  - {fileID: 114005926752248738}
   - {fileID: 114546430876483508}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
@@ -218,18 +215,6 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
---- !u!114 &114764898816139686
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1757669017230500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0914df604b2d204ebf122c55824c672, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 114005926752248738}
 --- !u!114 &114881786811359260
 MonoBehaviour:
   m_ObjectHideFlags: 1
