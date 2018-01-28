@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b762eb0f3558f409212c8907843e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementRange: 35
+  MovementRange: 120
   HorizontalAxisName: Horizontal
   VerticalAxisName: Vertical
   HideOnRelease: 1
