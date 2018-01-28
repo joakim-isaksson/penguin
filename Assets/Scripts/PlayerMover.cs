@@ -1,5 +1,4 @@
-﻿using System;
-using CnControls;
+﻿using CnControls;
 using UnityEngine;
 
 [RequireComponent(typeof(Player))]
@@ -25,13 +24,6 @@ public class PlayerMover : MonoBehaviour
 			CnInputManager.GetAxis("Horizontal"),
 			CnInputManager.GetAxis("Vertical")
 		);
-		
-		if (Math.Abs(input.magnitude) <= float.Epsilon)
-		{
-			player.Moving = false;
-			return;
-		}
-		player.Moving = true;
 		
 		if (input.magnitude > 1.0f) input.Normalize();
 		
