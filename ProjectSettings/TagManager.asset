@@ -9,6 +9,7 @@ TagManager:
   - ColorManager
   - ColorCircle
   - CameraController
+  - Score
   layers:
   - Default
   - TransparentFX
