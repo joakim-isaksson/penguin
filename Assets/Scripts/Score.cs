@@ -13,7 +13,9 @@ public class Score : MonoBehaviour
 
 	void Update()
 	{
-		if (Player != null) score.text = "" + Player.Contested;
+		if (Player == null) return;
+		var value = (int)(Player.Contested / 400.0f * 100);
+		score.text = value + "%";
 	}
 	
 	public static Score Get()
