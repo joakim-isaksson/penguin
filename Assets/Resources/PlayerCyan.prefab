@@ -206,7 +206,7 @@ MonoBehaviour:
     ExtrapolateSpeed: 1
     ExtrapolateIncludingRoundTripTime: 1
     ExtrapolateNumberOfStoredPositions: 1
-    DrawErrorGizmo: 1
+    DrawErrorGizmo: 0
   m_RotationModel:
     SynchronizeEnabled: 0
     InterpolateOption: 1
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2
-  Color: {r: 0.89705884, g: 0.2836289, b: 0.2836289, a: 1}
+  Color: {r: 0.45882353, g: 0.7764706, b: 1, a: 1}
   Contested: 0
   IsLocal: 0
 --- !u!114 &114857932032402550

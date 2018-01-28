@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2
-  Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
+  Color: {r: 0.24313726, g: 0.2509804, b: 0.7372549, a: 1}
   Contested: 0
   IsLocal: 0
 --- !u!114 &114282510673033414

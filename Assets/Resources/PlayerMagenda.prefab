@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2
-  Color: {r: 0.89705884, g: 0.2836289, b: 0.2836289, a: 1}
+  Color: {r: 1, g: 0.7411765, b: 0.88235295, a: 1}
   Contested: 0
   IsLocal: 0
 --- !u!114 &114735511568821746
