@@ -48,6 +48,6 @@ public class AutoJoinGame : Photon.MonoBehaviour
     // ReSharper disable once UnusedMember.Global
     public void OnJoinedRoom()
     {
-        game.JoinGame();
+        game.photonView.RPC("AssignPlayer", PhotonTargets.MasterClient);
     }
 }

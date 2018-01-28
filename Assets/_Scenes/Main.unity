@@ -15503,6 +15503,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1594860718}
+  - component: {fileID: 1594860720}
   - component: {fileID: 1594860719}
   - component: {fileID: 1594860717}
   m_Layer: 0
@@ -15523,9 +15524,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c980b537996e6448ae007f2228e4555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPrefab: {fileID: 1851190176543054, guid: 6aa6c68c52d0fb940b6c6304509475db,
-    type: 2}
-  MaxNumberOfPlayers: 12
+  MaxNumberOfPlayers: 6
+  PlayerPrefabs:
+  - {fileID: 1851190176543054, guid: 6aa6c68c52d0fb940b6c6304509475db, type: 2}
+  - {fileID: 1851190176543054, guid: 6aa6c68c52d0fb940b6c6304509475db, type: 2}
+  - {fileID: 1851190176543054, guid: 6aa6c68c52d0fb940b6c6304509475db, type: 2}
+  - {fileID: 1851190176543054, guid: 6aa6c68c52d0fb940b6c6304509475db, type: 2}
+  - {fileID: 1851190176543054, guid: 6aa6c68c52d0fb940b6c6304509475db, type: 2}
+  - {fileID: 1851190176543054, guid: 6aa6c68c52d0fb940b6c6304509475db, type: 2}
 --- !u!4 &1594860718
 Transform:
   m_ObjectHideFlags: 0
@@ -15553,6 +15559,32 @@ MonoBehaviour:
   OfflineMode: 0
   AutoConnect: 1
   Version: 1
+--- !u!114 &1594860720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1594860716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 3
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 1594860717}
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 1
+  instantiationId: 1
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1001 &1594942009
 Prefab:
   m_ObjectHideFlags: 0
