@@ -230,6 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 2
   Color: {r: 0.89705884, g: 0.2836289, b: 0.2836289, a: 1}
+  Contested: 0
   IsLocal: 0
 --- !u!114 &114735511568821746
 MonoBehaviour:
@@ -265,7 +266,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114022218491786396}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 4
-  instantiationId: 4
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
