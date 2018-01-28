@@ -2,7 +2,7 @@
 
 public class GameController : Photon.MonoBehaviour
 {
-	public byte MaxNumberOfPlayers = 12;
+	public byte MaxNumberOfPlayers;
 	public GameObject[] PlayerPrefabs;
 
 	PlayArea playArea;
@@ -16,7 +16,7 @@ public class GameController : Photon.MonoBehaviour
 	{
 		if (!PhotonNetwork.isMasterClient) return;
 		if (PhotonNetwork.room == null) return;
-		PhotonNetwork.room.IsOpen = PhotonNetwork.room.PlayerCount == MaxNumberOfPlayers;
+		PhotonNetwork.room.IsOpen = PhotonNetwork.room.PlayerCount != MaxNumberOfPlayers;
 	}
 	
 	[PunRPC]

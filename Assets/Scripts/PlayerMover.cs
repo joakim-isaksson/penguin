@@ -14,6 +14,10 @@ public class PlayerMover : MonoBehaviour
 	{
 		player = GetComponent<Player>();
 		rb = GetComponent<Rigidbody2D>();
+	}
+
+	void Start()
+	{
 		rb.isKinematic = !player.IsLocal;
 		enabled = player.IsLocal;
 	}
